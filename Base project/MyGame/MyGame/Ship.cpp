@@ -16,6 +16,8 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= SPEED * msElapsed * 5;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) x += SPEED * msElapsed * 5;
 	sprite_.setPosition(sf::Vector2f(x, y));
 }
 Ship::Ship() {
