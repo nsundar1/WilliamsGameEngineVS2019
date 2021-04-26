@@ -50,7 +50,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\ship.png">
+    <Image Include="Resources\notship">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\..\Downloads\ship.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

@@ -103,7 +103,8 @@
     <None Include="Resources\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\ship.png" />
+    <Image Include="..\..\..\..\..\..\Downloads\ship.png" />
+    <Image Include="Resources\notship" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
