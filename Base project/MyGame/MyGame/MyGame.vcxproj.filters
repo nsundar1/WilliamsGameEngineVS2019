@@ -16,6 +16,7 @@
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Laser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AnimatedSprite.h">
@@ -35,6 +36,7 @@
     </ClInclude>
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Ship.h" />
+    <ClInclude Include="Laser.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
