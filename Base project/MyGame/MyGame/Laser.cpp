@@ -36,5 +36,5 @@ void Laser::update(sf::Time& elapsed) {
 }
 
 
-//SHIP.h page 25
+
 
