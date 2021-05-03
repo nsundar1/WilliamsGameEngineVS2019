@@ -35,6 +35,11 @@ void Laser::update(sf::Time& elapsed) {
 	}
 }
 
+sf::FloatRect Laser::getCollisionRect() {
+	return sprite_.getGlobalBounds();
+
+}
+
 
 
 
