@@ -26,10 +26,10 @@ void Ship::update(sf::Time& elapsed) {
 		fireTimer_ = FIRE_DELAY;
 		sf::FloatRect bounds = sprite_.getGlobalBounds();
 
-		float laserX = x + bounds.width;
+		float laserX = x + bounds.width; //where to put laser
 		float laserY = y + (bounds.height / 2.0f);
-		LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY));
-		GAME.getCurrentScene().addGameObject(laser);
+		LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY)); //creates laser
+		GAME.getCurrentScene().addGameObject(laser); //adds laser
 
 
 

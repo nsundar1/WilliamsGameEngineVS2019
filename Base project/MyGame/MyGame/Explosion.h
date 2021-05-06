@@ -8,7 +8,7 @@ public:
 	void update(sf::Time& elapsed);
 private:
 	void SetUpExplosionAnimation();
-
+	sf::Sound boom_;
 
 
 };
