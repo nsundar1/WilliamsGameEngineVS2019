@@ -92,6 +92,7 @@
     <ClCompile Include="Meteor.cpp" />
     <ClCompile Include="MeteorSpawner.cpp" />
     <ClCompile Include="MyGame.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="Ship.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +106,7 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Meteor.h" />
     <ClInclude Include="MeteorSpawner.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="Ship.h" />
   </ItemGroup>
   <ItemGroup>
