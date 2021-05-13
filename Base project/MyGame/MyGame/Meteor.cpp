@@ -2,7 +2,8 @@
 #include <memory>
 #include "Explosion.h"
 #include"GameScene.h"
-
+#include "Score.h"
+#include <sstream>
 
 
 const float SPEED = 0.20f;
@@ -48,7 +49,15 @@ void Meteor::handleCollision(GameObject& otherGameObject) {
 		//LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY)); //creates laser
 		//GAME.getCurrentScene().addGameObject(laser); //adds laser
 		ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f (location));
+		
 		GAME.getCurrentScene().addGameObject(explosion);
+
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		scene.increaseScore();
+	//	GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		//std::stringstream stream;
+	//	stream << "Score: " << scene.increaseScore();
+
 	}
 	makeDead();
 }
