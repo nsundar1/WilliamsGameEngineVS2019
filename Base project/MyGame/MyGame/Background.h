@@ -3,6 +3,7 @@
 
 
 
+/*
 class Background : public GameObject {
 public:
 	//Background(sf::Vector2f pos);
@@ -13,3 +14,4 @@ private:
 
 };
 typedef std::shared_ptr<Background> BackgroundPtr;
+*/
