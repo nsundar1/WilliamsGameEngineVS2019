@@ -3,7 +3,10 @@
 #include"MeteorSpawner.h"
 #include "Score.h"
 #include "GameOverScene.h"
-
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h> 
+#include <memory>
 
 
 
@@ -24,6 +27,8 @@ int GameScene::getScore() {
 
 void GameScene::increaseScore() {
 	++score_;
+	
+	
 }
 int GameScene::getLives() {
 	return lives_;
@@ -35,4 +40,7 @@ void GameScene::decreaseLives()
 		GameOverScenePtr gameOverScene = std::make_shared<GameOverScene>(score_); 
 		GAME.setScene(gameOverScene); 
 	} 
+	
 }
+
+

@@ -1,10 +1,15 @@
 #include "Ship.h"
 #include <memory>
 #include"Laser.h"
+#include "Score.h"
+#include "GameScene.h"
+#include "GameScene.cpp"
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>  
 
 const float SPEED = 0.5f;
 const int FIRE_DELAY = 200;
-
 
 
 
@@ -43,6 +48,10 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= SPEED * msElapsed * 5;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) x += SPEED * msElapsed * 5;
 	sprite_.setPosition(sf::Vector2f(x, y));
+	if (score_ >= 10) {
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))	y -= (100 + score_ / lives_) * 2;
+	}
+
 }
 Ship::Ship() {
 	sprite_.setTexture(GAME.getTexture("Resources/ship.png"));
