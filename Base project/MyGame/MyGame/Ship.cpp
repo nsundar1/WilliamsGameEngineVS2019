@@ -45,12 +45,20 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
 
+	srand(time(NULL));
+	int Rand1 = rand() % 600;
+	int Rand2 = rand() % 800;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    x = Rand1 * msElapsed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    y = Rand2 * msElapsed;
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= SPEED * msElapsed * 5;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) x += SPEED * msElapsed * 5;
 	sprite_.setPosition(sf::Vector2f(x, y));
+	/*
 	if (score_ >= 10) {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))	y -= (100 + score_ / lives_) * 2;
 	}
+	*/
 
 }
 Ship::Ship() {

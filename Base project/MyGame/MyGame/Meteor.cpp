@@ -35,6 +35,7 @@ void Meteor::update(sf::Time& elapsed) {
 	}
 	else {
 		sprite_.setPosition(sf::Vector2f(pos.x - SPEED * msElapsed, pos.y));
+		sprite_.setPosition(sf::Vector2f(pos.y - SPEED * msElapsed, pos.x));
 	}
 }
 sf::FloatRect Meteor::getCollisionRect() {
