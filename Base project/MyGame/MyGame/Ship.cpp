@@ -3,7 +3,7 @@
 #include"Laser.h"
 #include "Score.h"
 #include "GameScene.h"
-#include "GameScene.cpp"
+
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>  
