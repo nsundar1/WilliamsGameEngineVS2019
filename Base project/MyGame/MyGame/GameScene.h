@@ -11,7 +11,7 @@ class GameScene : public Scene {
   int getScore();
  void increaseScore();
 
-
+ int increaseLives();
  int getLives();
  void decreaseLives();
 private:

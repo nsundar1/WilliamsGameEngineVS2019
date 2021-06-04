@@ -33,9 +33,15 @@ void GameScene::increaseScore() {
 }
 int GameScene::getLives() {
 
+
 	return lives_;
 }
-
+int GameScene::increaseLives() {
+	if (score_ % 10 == 0 && score_ >> 1) {
+		++lives_;
+	}
+	return lives_;
+}
 void GameScene::decreaseLives() 
 { 
 	--lives_; 

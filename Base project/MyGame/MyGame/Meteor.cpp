@@ -45,16 +45,21 @@ sf::FloatRect Meteor::getCollisionRect() {
 void Meteor::handleCollision(GameObject& otherGameObject) {
 	if (otherGameObject.hasTag("laser")) {
 		sf::Vector2f location = sprite_.getPosition();
+		ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f(location));
+		if (location.y <= 120) {
+			
+		}
 		otherGameObject.makeDead();
-		
+			
 		//LaserPtr laser = std::make_shared<Laser>(sf::Vector2f(laserX, laserY)); //creates laser
 		//GAME.getCurrentScene().addGameObject(laser); //adds laser
-		ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f (location));
+		
 		
 		GAME.getCurrentScene().addGameObject(explosion);
 
 		GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		scene.increaseScore();
+		scene.increaseLives();
 	//	GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		//std::stringstream stream;
 	//	stream << "Score: " << scene.increaseScore();

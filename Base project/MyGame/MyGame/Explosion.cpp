@@ -9,6 +9,10 @@ Explosion::Explosion(sf::Vector2f pos)
 	boom_.setBuffer(GAME.getSoundBuffer("Resources/boom.wav"));
 	boom_.play();
 }
+void Explosion::AC() {
+	AM.setBuffer(GAME.getSoundBuffer("Resources/A Major.wav"));
+	AM.play();
+}
 
 void Explosion::SetUpExplosionAnimation() {
 
