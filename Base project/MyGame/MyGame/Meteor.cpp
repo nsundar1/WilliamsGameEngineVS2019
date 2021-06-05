@@ -6,7 +6,7 @@
 #include <sstream>
 
 
-const float SPEED = 0.20f;
+const float SPEED = 0.30f;
 
 Meteor::Meteor(sf::Vector2f pos) { //constructor
 	sprite_.setTexture(GAME.getTexture("Resources/meteor.png"));
@@ -46,8 +46,21 @@ void Meteor::handleCollision(GameObject& otherGameObject) {
 	if (otherGameObject.hasTag("laser")) {
 		sf::Vector2f location = sprite_.getPosition();
 		ExplosionPtr explosion = std::make_shared<Explosion>(sf::Vector2f(location));
+		GameScene& scene = (GameScene&)GAME.getCurrentScene();
 		if (location.y <= 120) {
-			
+			scene.AC();
+		}
+		if (location.y <= 240 && location.y >= 121) {
+			scene.BC();
+		}
+		if (location.y <= 360 && location.y >= 241) {
+			scene.CC();
+		}
+		if (location.y <= 480 && location.y >= 361) {
+			scene.DC();
+		}
+		if (location.y <= 600 && location.y >= 481) {
+			scene.EC();
 		}
 		otherGameObject.makeDead();
 			
@@ -57,7 +70,7 @@ void Meteor::handleCollision(GameObject& otherGameObject) {
 		
 		GAME.getCurrentScene().addGameObject(explosion);
 
-		GameScene& scene = (GameScene&)GAME.getCurrentScene();
+		
 		scene.increaseScore();
 		scene.increaseLives();
 	//	GameScene& scene = (GameScene&)GAME.getCurrentScene();

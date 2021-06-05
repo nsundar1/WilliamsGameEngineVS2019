@@ -46,8 +46,8 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
 
 	srand(time(NULL));
-	int Rand1 = rand() % 600;
-	int Rand2 = rand() % 800;
+	int Rand1 = rand() % 50;
+	int Rand2 = rand() % 50;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    x = Rand1 * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    y = Rand2 * msElapsed;
 
