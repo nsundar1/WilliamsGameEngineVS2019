@@ -78,5 +78,6 @@ void Meteor::handleCollision(GameObject& otherGameObject) {
 	//	stream << "Score: " << scene.increaseScore();
 
 	}
+	
 	makeDead();
 }
