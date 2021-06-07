@@ -7,6 +7,7 @@ Score::Score(sf::Vector2f pos) {
 	text_.setFont(GAME.getFont("Resources/Courneuf-Regular.ttf"));
 	text_.setPosition(pos);
 	text_.setCharacterSize(24);
+
 	text_.setFillColor(sf::Color::White);
 	assignTag("score");
 

@@ -36,12 +36,14 @@ int GameScene::getLives() {
 
 	return lives_;
 }
+
 int GameScene::increaseLives() {
 	if (score_ % 10 == 0 && score_ >> 1) {
 		++lives_;
 	}
 	return lives_;
 }
+//Notes
 void GameScene::AC(){
 	AM.setBuffer(GAME.getSoundBuffer("Resources/AC.wav"));
 	AM.play();
@@ -71,6 +73,7 @@ void GameScene::decreaseLives()
 	} 
 	
 }
+//To unlock new lvl once meteors scores goes to 50
 bool GameScene::Speed() {
 	bool x = false;
 	if (score_ >= 50) {

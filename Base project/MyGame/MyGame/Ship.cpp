@@ -39,14 +39,16 @@ void Ship::update(sf::Time& elapsed) {
 
 
 	}
+	//Speed Buttons
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))	SPEED += 0.01f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))	SPEED -= 0.01f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	SPEED = 0.5f;
-
+	//Regular Movement
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
+	//Special Movement
 	srand(time(NULL));
 	int Rand1 = rand() % 40;
 	int Rand2 = rand() % 30;
