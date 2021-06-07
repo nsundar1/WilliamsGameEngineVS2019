@@ -48,11 +48,12 @@ void Ship::update(sf::Time& elapsed) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= SPEED * msElapsed * 5;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) x += SPEED * msElapsed * 5;
 	sprite_.setPosition(sf::Vector2f(x, y));
-	if (score_ >= 10) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))	y -= (100 + score_ / lives_) * 2;
-	}
-
+	if (x < 0) x = 800;
+	if (x > 800) x = 0;
+	if (y > 700) y = 600;
+	if (y < 0) y = 25;
 }
+
 Ship::Ship() {
 	sprite_.setTexture(GAME.getTexture("Resources/ship.png"));
 	sprite_.setPosition(sf::Vector2f(100, 100));
