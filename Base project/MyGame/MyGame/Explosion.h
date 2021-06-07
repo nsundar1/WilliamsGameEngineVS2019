@@ -6,9 +6,11 @@ class Explosion : public AnimatedSprite {
 public:
 	Explosion(sf::Vector2f pos);
 	void update(sf::Time& elapsed);
+
 private:
 	void SetUpExplosionAnimation();
 	sf::Sound boom_;
+
 
 
 };

@@ -22,7 +22,8 @@ void Score::draw() {
 void Score::update(sf::Time& elapsed) {
 	GameScene& scene = (GameScene&)GAME.getCurrentScene();
 	std::stringstream stream;
-	stream << "SCORE: " << scene.getScore();
+	stream << "SCORE: " << scene.getScore() << '\t' << "LIVES: " << scene.getLives();
+
 	text_.setString(stream.str());
 }
 
