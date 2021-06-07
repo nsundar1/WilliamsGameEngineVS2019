@@ -41,14 +41,15 @@ void Ship::update(sf::Time& elapsed) {
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))	SPEED +=0.01f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))	SPEED -= 0.01f;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	SPEED = 0.5f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
 
 	srand(time(NULL));
-	int Rand1 = rand() % 50;
-	int Rand2 = rand() % 40;
+	int Rand1 = rand() % 40;
+	int Rand2 = rand() % 30;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    x = Rand1 * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    y = Rand2 * msElapsed;
 
