@@ -39,28 +39,24 @@ void Ship::update(sf::Time& elapsed) {
 
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))	SPEED +=0.01f;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))	SPEED += 0.01f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))	SPEED -= 0.01f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	SPEED = 0.5f;
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))	y -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))	y += SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))	x -= SPEED * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))	x += SPEED * msElapsed;
-
 	srand(time(NULL));
 	int Rand1 = rand() % 40;
 	int Rand2 = rand() % 30;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    x = Rand1 * msElapsed;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))    y = Rand2 * msElapsed;
-
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= SPEED * msElapsed * 5;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::RShift)) x += SPEED * msElapsed * 5;
 	sprite_.setPosition(sf::Vector2f(x, y));
-	/*
-	if (score_ >= 10) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))	y -= (100 + score_ / lives_) * 2;
-	}
-	*/
+	
+}
 
 Ship::Ship() {
 	sprite_.setTexture(GAME.getTexture("Resources/ship.png"));
