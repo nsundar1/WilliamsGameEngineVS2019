@@ -71,5 +71,14 @@ void GameScene::decreaseLives()
 	} 
 	
 }
-
+bool GameScene::Speed() {
+	bool x = false;
+	if (score_ >= 50) {
+		x= true;
+	}
+	else {
+		x = false;
+	}
+	return x;
+}
 

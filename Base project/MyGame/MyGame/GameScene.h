@@ -10,7 +10,7 @@ class GameScene : public Scene {
   
   int getScore();
  void increaseScore();
-
+ bool Speed();
  int increaseLives();
  int getLives();
  void decreaseLives();

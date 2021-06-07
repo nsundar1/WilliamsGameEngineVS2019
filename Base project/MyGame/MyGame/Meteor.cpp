@@ -6,7 +6,7 @@
 #include <sstream>
 
 
-const float SPEED = 0.30f;
+float xSPEED = 0.30f;
 
 Meteor::Meteor(sf::Vector2f pos) { //constructor
 	sprite_.setTexture(GAME.getTexture("Resources/meteor.png"));
@@ -34,7 +34,7 @@ void Meteor::update(sf::Time& elapsed) {
 
 	}
 	else {
-		sprite_.setPosition(sf::Vector2f(pos.x - SPEED * msElapsed, pos.y));
+		sprite_.setPosition(sf::Vector2f(pos.x - xSPEED * msElapsed, pos.y));
 
 	}
 }
@@ -70,7 +70,10 @@ void Meteor::handleCollision(GameObject& otherGameObject) {
 		
 		GAME.getCurrentScene().addGameObject(explosion);
 
-		
+
+		if (scene.Speed() == true) {
+			xSPEED = .5f;
+		}
 		scene.increaseScore();
 		scene.increaseLives();
 	//	GameScene& scene = (GameScene&)GAME.getCurrentScene();
